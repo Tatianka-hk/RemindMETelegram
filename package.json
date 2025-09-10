@@ -1,0 +1,29 @@
+{
+    "name": "remindmetelegrambot",
+    "version": "1.0.0",
+    "description": "Telegram bot that remind some posts in chats",
+    "main": "index.ts",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "npx ts-node index.ts"
+    },
+    "keywords": [
+        "telegrambot",
+        "telegram",
+        "remindme"
+    ],
+    "author": "Tatianka-hk",
+    "license": "ISC",
+    "dependencies": {
+        "dayjs": "^1.11.18",
+        "dotenv": "^17.2.2",
+        "node-cron": "^4.2.1",
+        "telegraf": "^4.16.3",
+        "ts-node": "^10.9.2"
+    },
+    "devDependencies": {
+        "@types/node": "^24.3.1",
+        "i": "^0.3.7",
+        "npm": "^11.6.0"
+    }
+}
