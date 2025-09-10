@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 import "dotenv/config";
 import tz from "dayjs/plugin/timezone.js";
 
-import { ReminderMessage } from "./types";
+import type { ReminderMessage } from "./types";
 
 dayjs.extend(tz);
 
