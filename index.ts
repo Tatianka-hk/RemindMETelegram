@@ -2,7 +2,7 @@ import cron from "node-cron";
 import { Telegraf } from "telegraf";
 import dayjs from "dayjs";
 import "dotenv/config";
-import tz from "dayjs/plugin/timezone";
+import tz from "dayjs/plugin/timezone.js";
 
 import { ReminderMessage } from "./types";
 
