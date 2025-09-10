@@ -8,7 +8,7 @@ import type { ReminderMessage } from "./types";
 
 dayjs.extend(tz);
 
-const BOT_TOKEN: string = process.env.Telegram_Bot_Token || "";
+const BOT_TOKEN: string = process.env["Telegram_Bot_Token"] ?? "";
 console.log(
     BOT_TOKEN,
     "process.env.BOT_TOKEN ",
