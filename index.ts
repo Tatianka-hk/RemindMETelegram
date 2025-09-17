@@ -8,7 +8,7 @@ import { Collection, MongoClient } from "mongodb";
 import type { ReminderMessage, ReminderMessageDoc } from "./types";
 
 const TIMEZONE = "Europe/Madrid";
-const DAYS_RANGE = [0, 1, 3, 7, 14];
+const DAYS_RANGE = [3, 7, 14];
 const BOT_TOKEN: string = process.env["Telegram_Bot_Token"] ?? "";
 const MONGODB_URL: string = process.env["MONGO_URL"] ?? "";
 if (!BOT_TOKEN || BOT_TOKEN === "" || !MONGODB_URL || MONGODB_URL === "") {
