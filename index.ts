@@ -2,8 +2,8 @@ import cron from "node-cron";
 import { Telegraf } from "telegraf";
 import dayjs from "dayjs";
 import "dotenv/config";
-import utc from "dayjs/plugin/utc";
-import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc.js";
+import timezone from "dayjs/plugin/timezone.js";
 import { Collection, MongoClient } from "mongodb";
 import type { ReminderMessage, ReminderMessageDoc } from "./types";
 
