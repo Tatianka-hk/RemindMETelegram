@@ -25,11 +25,15 @@ const todayLocal = () => startOfLocalDay(dayjs());
 
 const bot = new Telegraf(BOT_TOKEN);
 
-(async () => {
-    await bot.telegram.deleteWebhook({ drop_pending_updates: true });
-    await bot.launch({ dropPendingUpdates: true });
-})();
-
+const g = global as any;
+if (!g.__botLaunched) {
+    (async () => {
+        await bot.telegram.deleteWebhook({ drop_pending_updates: true });
+        await bot.launch({ dropPendingUpdates: true });
+        g.__botLaunched = true;
+        console.log("Bot launched (polling)");
+    })();
+}
 const client = new MongoClient(MONGODB_URL);
 client
     .connect()
