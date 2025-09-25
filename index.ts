@@ -5,10 +5,10 @@ import "dotenv/config";
 import utc from "dayjs/plugin/utc.js";
 import timezone from "dayjs/plugin/timezone.js";
 import { Collection, MongoClient } from "mongodb";
-import type { ReminderMessage, ReminderMessageDoc } from "./types";
+import type { ReminderMessage, ReminderMessageDoc } from "./types.ts";
 
 const TIMEZONE = "Europe/Madrid";
-const DAYS_RANGE = [3, 7, 14];
+const DAYS_RANGE = [0, 1, 3, 7, 14];
 const BOT_TOKEN: string = process.env["Telegram_Bot_Token"] ?? "";
 const MONGODB_URL: string = process.env["MONGO_URL"] ?? "";
 if (!BOT_TOKEN || BOT_TOKEN === "" || !MONGODB_URL || MONGODB_URL === "") {
@@ -74,8 +74,9 @@ bot.on("message", async (ctx) => {
 function main(): void {
     try {
         cron.schedule(
-            "0 30 18 * * *",
+            "0 00 14 * * *",
             async () => {
+                console.log("Running cron job 14:00");
                 const nowDay = todayLocal();
                 const ranges = DAYS_RANGE.map((d) => {
                     const start = nowDay.clone().subtract(d, "day").valueOf();
