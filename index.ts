@@ -74,7 +74,7 @@ bot.on("message", async (ctx) => {
 function main(): void {
     try {
         cron.schedule(
-            "0 00 14 * * *",
+            "0 30 18 * * *",
             async () => {
                 const nowDay = todayLocal();
                 const ranges = DAYS_RANGE.map((d) => {
