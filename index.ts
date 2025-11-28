@@ -19,6 +19,19 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.tz.setDefault(TIMEZONE);
 
+import http from "http";
+
+const PORT = Number(process.env.PORT) || 3000;
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200);
+    res.end("Bot is running");
+});
+
+server.listen(PORT, () => {
+    console.log("HTTP server listening on port", PORT);
+});
+
 //helpers
 const startOfLocalDay = (d: dayjs.Dayjs) => d.tz(TIMEZONE).startOf("day");
 const todayLocal = () => startOfLocalDay(dayjs());
