@@ -11,7 +11,12 @@ const TIMEZONE = "Europe/Madrid";
 const DAYS_RANGE = [0, 1, 3, 7, 14];
 const BOT_TOKEN: string = process.env["Telegram_Bot_Token"] ?? "";
 const MONGODB_URL: string = process.env["MONGO_URL"] ?? "";
-if (!BOT_TOKEN || BOT_TOKEN === "" || !MONGODB_URL || MONGODB_URL === "") {
+console.log(BOT_TOKEN, MONGODB_URL);
+if (!BOT_TOKEN || BOT_TOKEN === "") {
+    throw new Error("BOT_TOKEN is not defined");
+}
+
+if (!MONGODB_URL || MONGODB_URL === "") {
     throw new Error("BOT_TOKEN is not defined");
 }
 
